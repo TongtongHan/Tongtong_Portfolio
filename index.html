@@ -4,17 +4,718 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tongtong Han - Data Science Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #3a86ff;
+            --secondary-color: #8338ec;
+            --accent-color: #ff006e;
+            --text-color: #2b2d42;
+            --light-bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --border-color: #eaeaea;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            color: #ccc;
+            margin: 0 auto 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            margin-right: 8px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 20px 25px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary-color);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .skill-items {
+            list-style-type: none;
+        }
+
+        .skill-items li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-items li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--card-bg);
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+
+        .timeline-content {
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .role {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-content li::before {
+            content: "•";
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects Section */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ccc;
+            font-size: 2rem;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 15px 0;
+            gap: 8px;
+        }
+
+        .project-tag {
+            background-color: rgba(58, 134, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .github-link {
+            background-color: var(--text-color);
+            color: white;
+        }
+
+        .github-link:hover {
+            background-color: #000;
+        }
+
+        .demo-link {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .demo-link:hover {
+            background-color: #2a75e6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2b2d42;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-right: 25px;
+                padding-left: 70px;
+            }
+
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item::after {
+                left: 20px !important;
+                right: auto !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hi, I'm Tongtong Han, a Data Scientist with expertise in Machine Learning, NLP, and Big Data.</p>
-    <h2>Projects</h2>
-    <ul>
-        <li><a href="#">Project 1</a></li>
-        <li><a href="#">Project 2</a></li>
-        <li><a href="#">Project 3</a></li>
-    </ul>
-    <h2>Resume</h2>
-    <p><a href="Resume_Tongtong_Han.pdf" target="_blank">Download My Resume (PDF)</a></p>
+    <header>
+        <div class="profile-container">
+            <div class="profile-image">TH</div>
+            <h1>Tongtong Han</h1>
+            <p class="tagline">Data Scientist | Machine Learning Specialist</p>
+            <div class="contact-links">
+                <a href="mailto:hantongtong03@gmail.com">
+                    <span class="contact-icon">✉️</span>
+                    hantongtong03@gmail.com
+                </a>
+                <a href="tel:+61422735883">
+                    <span class="contact-icon">📞</span>
+                    (+61) 422735883
+                </a>
+                <a href="https://github.com/TongtongHan/Tongtong_Portfolio" target="_blank">
+                    <span class="contact-icon">💻</span>
+                    GitHub
+                </a>
+                <a href="http://www.linkedin.com/in/tongtonghan" target="_blank">
+                    <span class="contact-icon">🔗</span>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I'm a Data Science graduate student at Monash University with a strong foundation in Economics and Business Administration. My expertise spans across machine learning, deep learning, data wrangling, and big data processing. I combine technical skills with business knowledge to deliver data-driven solutions that create real value.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <h3>Master of Data Science</h3>
+                        <p>Monash University | July 2023 - May 2025 (Expected)</p>
+                        <p>GPA: 3.5 | WAM: 80.4</p>
+                        <p><strong>Relevant Coursework:</strong> Machine Learning, Deep Learning, Statistical Data Modelling, Data Wrangling, Data Processing For Big Data, Project Management</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Bachelor of Economics</h3>
+                        <p>University of Arizona, Eller College of Management</p>
+                        <p>August 2015 - August 2019</p>
+                        <p>Minor in Business Administration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <h3>Programming & Tools</h3>
+                        <ul class="skill-items">
+                            <li>Python, R, PyTorch</li>
+                            <li>SQL, MongoDB</li>
+                            <li>PySpark, Kafka</li>
+                            <li>Tableau, Power BI</li>
+                            <li>LaTeX, Git</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Machine Learning & Deep Learning</h3>
+                        <ul class="skill-items">
+                            <li>Regression, Classification, Clustering</li>
+                            <li>Time Series Analysis</li>
+                            <li>CNN, RNN, DNN</li>
+                            <li>ViTs, Transformers</li>
+                            <li>NLP & Sentiment Analysis</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Data Engineering</h3>
+                        <ul class="skill-items">
+                            <li>Data Cleaning & Transformation</li>
+                            <li>Feature Engineering</li>
+                            <li>Real-time Data Handling</li>
+                            <li>Big Data Processing</li>
+                            <li>Database Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Business Knowledge</h3>
+                        <ul class="skill-items">
+                            <li>Project Management (Waterfall, Agile)</li>
+                            <li>Economics & Marketing</li>
+                            <li>Business Administration</li>
+                            <li>Supply Chain Management</li>
+                            <li>Stakeholder Management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <h2>Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Wantirna College</h3>
+                            <p class="role">IT Intern</p>
+                            <p class="date">December 2024 - February 2025</p>
+                            <ul>
+                                <li>Provided technical support to faculty and students, resolving software issues</li>
+                                <li>Automated student record processing using Python, reducing manual effort by 40%</li>
+                                <li>Improved data accuracy by 10% through automated solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Flexport</h3>
+                            <p class="role">Global Operations Associate</p>
+                            <p class="date">October 2022 - January 2023</p>
+                            <ul>
+                                <li>Optimized operational efficiency through data cleaning and integration</li>
+                                <li>Developed automated dashboards, reducing manual reporting time by 30%</li>
+                                <li>Enhanced user experience by streamlining systems and workflows</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Flexport</h3>
+                            <p class="role">Client Solution Associate</p>
+                            <p class="date">April 2022 - September 2022</p>
+                            <ul>
+                                <li>Implemented data-driven account management strategies</li>
+                                <li>Increased customer engagement through platform adoption</li>
+                                <li>Managed shipment lifecycles, ensuring 95% on-time deliveries</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Sunvalleytek International Inc</h3>
+                            <p class="role">Amazon Marketing Specialist</p>
+                            <p class="date">September 2020 - December 2021</p>
+                            <ul>
+                                <li>Conducted data-driven marketing analysis for campaign optimization</li>
+                                <li>Launched VAVA Baby Monitor, driving 170% sales growth</li>
+                                <li>Optimized inventory management, achieving targets ahead of schedule</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-image">ML</div>
+                        <div class="project-content">
+                            <h3>Customer Churn Prediction</h3>
+                            <p>Built a machine learning pipeline to predict customer churn using historical transaction data and behavioral patterns.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">scikit-learn</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/TongtongHan/Tongtong_Portfolio" class="project-link github-link" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">NLP</div>
+                        <div class="project-content">
+                            <h3>Sentiment Analysis Dashboard</h3>
+                            <p>Developed an interactive dashboard for real-time sentiment analysis of product reviews using natural language processing.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">PyTorch</span>
+                                <span class="project-tag">Transformers</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/TongtongHan/Tongtong_Portfolio" class="project-link github-link" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">BI</div>
+                        <div class="project-content">
+                            <h3>Sales Analytics Platform</h3>
+                            <p>Created a comprehensive business intelligence solution that integrates data from multiple sources for sales forecasting and trend analysis.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">SQL</span>
+                                <span class="project-tag">Data Modeling</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/TongtongHan/Tongtong_Portfolio" class="project-link github-link" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Let's Connect</h3>
+            <p>I'm always open to new opportunities and collaborations in data science and machine learning.</p>
+            <div class="social-links">
+                <a href="mailto:hantongtong03@gmail.com">Email</a>
+                <a href="http://www.linkedin.com/in/tongtonghan" target="_blank">LinkedIn</a>
+                <a href="https://github.com/TongtongHan/Tongtong_Portfolio" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
