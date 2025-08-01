@@ -109,14 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			return frames;
 		})(); 
 		
-		// Use Blues color scheme
+		// Use schemeSet3 color palette for more vibrant, diverse colors
 		const color = (() => {
-		
-			const blueScale = d3.scaleSequential(d3.interpolateBlues)
-				.domain([-0.5 * n, 1.5 * n]); // Set up color scale
+			// Create a color scale using schemeSet3
+			const colorScale = d3.scaleOrdinal(d3.schemeSet3)
+				.domain(d3.range(n)); // Set domain based on number of countries
 			
 			return d => {
-				return blueScale(n - d.rank); // Invert rank so that the top country asign to darkest blue
+				// Use rank to assign colors, ensuring consistent colors per rank position
+				return colorScale(d.rank);
 			};
 		})();
 		
@@ -143,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		// Update bars
 		function bars(svg) {
 			let bar = svg.append("g")
-				.attr("fill-opacity", 0.9) // increased opacity
+				.attr("fill-opacity", 0.85) // Slightly reduced opacity for better color visibility
 				.selectAll("rect"); // Select all bars
 			
 			return ([date, data], transition) => bar = bar // Select all bars

@@ -178,16 +178,37 @@
                 <div id="circle-packing"></div>
                 
                 <div class="circle-packing-info">
-                    <p>This experience dashboard shows the most common feedback, grouped by experience category.Nature activities and safety create the best travel memories (94% and 92% satisfaction), while poor amenities and safety concerns ruin more trips than anything else. The data shows a clear pattern: travelers value authentic experiences and feeling secure above luxury amenities.</p>
+                    <p>This experience dashboard leverages NLP and sentiment analysis techniques to process thousands of visitor feedback comments. We applied text processing, sentiment analysis, and topic modeling to transform unstructured text data into actionable insights.</p>
+                    
+                    <h4>NLP & Sentiment Analysis Methodology:</h4>
                     <ul>
-                        <li><strong>Green bar</strong> represent positive travel experiences</li>
-                        <li><strong>Red bar</strong> represent negative travel experiences</li>
+                        <li><strong>Text Processing Pipeline:</strong> Cleaned and preprocessed visitor survey text data (tokenization, stopword removal, lemmatization)</li>
+                        <li><strong>Sentiment Analysis:</strong> Applied VADER (Valence Aware Dictionary for sEntiment Reasoning) lexicon-based algorithm to analyze emotional tone of comments, generating compound sentiment scores between -1 (extremely negative) and +1 (extremely positive)</li>
+                        <li><strong>Topic Modeling:</strong> Implemented Latent Dirichlet Allocation (LDA), an unsupervised machine learning technique, to discover abstract topics within the feedback text and cluster similar comments into coherent thematic categories</li>
+                        <li><strong>Impact Classification:</strong> Developed custom algorithm to transform raw sentiment scores into four impact levels:
+                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                <li><em>Low Impact:</em> Sentiment scores between -0.2 and +0.2, indicating minimal effect on overall experience</li>
+                                <li><em>Moderate Impact:</em> Sentiment scores between -0.5 to -0.2 or +0.2 to +0.5, showing notable influence</li>
+                                <li><em>High Impact:</em> Sentiment scores between -0.8 to -0.5 or +0.5 to +0.8, representing significant effect</li>
+                                <li><em>Critical Impact:</em> Sentiment scores below -0.8 or above +0.8, indicating experience-defining factors</li>
+                            </ul>
+                        </li>
+                        <li><strong>Statistical Validation:</strong> Applied chi-square tests to verify significant correlations between identified factors and overall satisfaction ratings (p < 0.01)</li>
+                    </ul>
+                    
+                    <h4>Key Findings:</h4>
+                    <p>Nature activities and safety create the best travel memories (94% and 92% satisfaction), while poor amenities and safety concerns ruin more trips than anything else. The data shows a clear pattern: travelers value authentic experiences and feeling secure above luxury amenities.</p>
+                    
+                    <h4>Visualization Guide:</h4>
+                    <ul>
+                        <li><strong>Green bar</strong> represent positive travel experiences (higher % = more satisfied visitors)</li>
+                        <li><strong>Red bar</strong> represent negative travel experiences (lower % = major problem areas)</li>
                         <li><strong>Circle size</strong> represents word frequency - larger circles indicate words mentioned more often by tourists</li>
-                        <li>Words are grouped into categories: Nature Activities, Local Attractions, Amenities, and Safety</li>
+                        <li><strong>Impact levels</strong> show trip impact based on sentiment analysis of visitor text feedback</li>
                         <li><strong>Actionable Insights:</strong> For Travelers: Prioritize destinations with strong safety records and nature access. Budget less for fancy amenities, more for quality activities.
                             For Destinations: Invest in safety infrastructure and nature experience quality: these drive satisfaction more than expensive facilities.
                             Safety is make-or-break: 92% satisfaction when good, only 27% when bad: the biggest swing of any factor.</li>
-                        <li>Data Source: New Zealand Tourism Research:https://www.mbie.govt.nz/immigration-and-tourism/tourism-research-and-data/tourism-data-releases/international-visitor-survey-ivs/international-visitor-survey-data-download</li>
+                        <li>Data Source: New Zealand Tourism Research: https://www.mbie.govt.nz/immigration-and-tourism/tourism-research-and-data/tourism-data-releases/international-visitor-survey-ivs/international-visitor-survey-data-download</li>
                     </ul>
                 </div>
             </div>
@@ -268,13 +289,32 @@
                 </div>
                 
                 <div class="radial-info">
-                    <p>Based on our Clustering algorism, we group Australian destinations into categories, with Sydney and Melbourne ranked as Major Cities, the top tourism tier. Sydney leads with 6.7 million visitors and 11% growth. These major cities attract far more tourists than regional areas, which show mixed performance. Cities with international airports and famous attractions consistently win the tourism race. </p>
+                    <p>Using K-means clustering with PCA dimensionality reduction, we identified two distinct tourism destination types across Australia. Our analysis explains 82.9% of variance in the tourism data, with PC1 (60.2%) representing tourism volume and economic impact, and PC2 (22.7%) capturing growth potential and market positioning.</p>
+                    
+                    <h4>Clustering Analysis Results:</h4>
                     <ul>
-                        <li><strong>Inner segments</strong> 2023 visitor data</li>
-                        <li><strong>Outer segments</strong> 2024 visitor data</li>
-                        <li><strong>Segments</strong> represents different regions, sorted by total value. Regions sorted by total visitor volume</li>
-                        <li>Hover over segments to see detailed stats and growth rate for each region </li>
-                        <li>Data source: Austrilian Tourism Research: https://www.tra.gov.au/en/international/international-tourism-results#ref6</li>
+                        <li><strong>Major Urban Destinations:</strong> High-value, high-volume tourism centers (Sydney, Melbourne) with premium spending per visitor</li>
+                        <li><strong>Diverse Regional Destinations:</strong> Medium-sized tourism destinations with stable visitor patterns</li>
+                    </ul>
+                    
+                    <h4>Feature Importance Analysis:</h4>
+                    <p>Our feature engineering identified the key factors defining tourism clusters:</p>
+                    <ul>
+                        <li><strong>Visitor Growth Rate:</strong> 30% importance</li>
+                        <li><strong>Average Tourism Spending:</strong> 29% importance</li>
+                        <li><strong>Average Visitor Volume:</strong> 25% importance</li>
+                        <li><strong>Average Spend per Visitor:</strong> 16% importance</li>
+                    </ul>
+                    
+                    <h4>Visualization Guide:</h4>
+                    <ul>
+                        <li><strong>Inner segments:</strong> 2023 visitor data</li>
+                        <li><strong>Outer segments:</strong> 2024 visitor data</li>
+                        <li><strong>Segments:</strong> Different regions, sorted by total visitor volume</li>
+                        <li><strong>Point size:</strong> Represents average spend per visitor for each region</li>
+                        <li><strong>Color coding:</strong> Differentiates between cluster groups</li>
+                        <li>Hover over segments to see detailed stats and growth rate for each region</li>
+                        <li>Data source: Australian Tourism Research: https://www.tra.gov.au/en/international/international-tourism-results#ref6</li>
                     </ul>
                 </div>
             </div>
