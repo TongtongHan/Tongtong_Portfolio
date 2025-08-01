@@ -1,0 +1,246 @@
+Country,decade,region,Tourism_Volume
+Albania,1990,Europe,304000
+Albania,2000,Europe,317000
+Algeria,1990,Arab States,520000
+Andorra,2000,Europe,10991000
+Angola,2010,Africa,425000
+Antigua and Barbuda,2010,Latin America,788000
+Argentina,1990,Latin America,2289000
+Argentina,2000,Latin America,2909000
+Argentina,2010,Latin America,6800000
+Armenia,1990,Europe,12000
+Armenia,2000,Europe,45000
+Australia,1990,Asia,3726000
+Australia,2000,Asia,4931000
+Australia,2010,Asia,5790000
+Austria,1990,Europe,17173000
+Austria,2000,Europe,17982000
+Azerbaijan,2000,Europe,681000
+Azerbaijan,2010,Europe,1963000
+Azerbaijan,2020,Europe,796000
+Bahrain,2000,Arab States,3869000
+Bahrain,2010,Arab States,11952000
+Bangladesh,1990,Asia,156000
+Barbados,2010,Latin America,1197000
+Belarus,2000,Europe,2030000
+Belgium,1990,Europe,5560000
+Belgium,2000,Europe,6457000
+Belgium,2010,Europe,7186000
+Belize,1990,Latin America,342000
+Bosnia and Herzegovina,2000,Europe,171000
+Bosnia and Herzegovina,2020,Europe,197000
+Botswana,2000,Africa,1306000
+Botswana,2010,Africa,1660000
+Brazil,1990,Latin America,1991000
+Brazil,2000,Latin America,5313000
+Brazil,2010,Latin America,5161000
+Burkina Faso,2000,Africa,126000
+Burkina Faso,2010,Africa,274000
+Burkina Faso,2020,Africa,67000
+Cabo Verde,2000,Africa,115000
+Cambodia,1990,Asia,220000
+Cambodia,2000,Asia,466000
+Cambodia,2010,Asia,2508000
+Cambodia,2020,Asia,1306000
+Canada,1990,Europe,41657000
+Canada,2000,Europe,48638000
+Canada,2010,Europe,25621000
+Chad,2010,Africa,71000
+Chile,2000,Latin America,3713000
+China,1990,Asia,46387000
+China,2000,Asia,83444000
+China,2010,Asia,133762000
+China,2020,Asia,30402000
+Colombia,1990,Latin America,1433000
+Colombia,2000,Latin America,707000
+Colombia,2010,Latin America,1701000
+Costa Rica,1990,Latin America,924000
+Costa Rica,2010,Latin America,2495000
+Croatia,1990,Europe,16100000
+Croatia,2000,Europe,37226000
+Cuba,1990,Latin America,745000
+Cuba,2000,Latin America,1774000
+Cyprus,1990,Europe,2253000
+Czechia,2000,Europe,20108000
+Czechia,2010,Europe,21941000
+Denmark,2000,Europe,21119000
+Denmark,2010,Europe,26730000
+Denmark,2020,Europe,15595000
+Dominica,1990,Latin America,203000
+Dominican Republic,1990,Latin America,1806000
+Ecuador,1990,Latin America,440000
+Eritrea,2010,Africa,84000
+Estonia,1990,Europe,2111000
+Ethiopia,2000,Africa,136000
+Ethiopia,2010,Africa,468000
+Ethiopia,2020,Africa,518000
+Fiji,2010,Asia,692000
+Finland,1990,Europe,1779000
+France,1990,Europe,148263000
+France,2000,Europe,190282000
+France,2010,Europe,189826000
+France,2020,Europe,117109000
+Gabon,2000,Africa,230000
+Georgia,1990,Europe,85000
+Georgia,2020,Europe,1513000
+Germany,1990,Europe,14847000
+Germany,2000,Europe,18983000
+Germany,2010,Europe,26875000
+Germany,2020,Europe,12449000
+Greece,1990,Europe,10712000
+Greece,2000,Europe,13567000
+Greece,2010,Europe,20112000
+Greece,2020,Europe,7406000
+Guatemala,2020,Latin America,594000
+Hungary,1990,Europe,39240000
+Hungary,2000,Europe,31141000
+Iceland,2000,Europe,328000
+Iceland,2010,Europe,559000
+India,1990,Asia,2124000
+India,2000,Asia,2649000
+India,2010,Asia,5776000
+Indonesia,1990,Asia,4324000
+Indonesia,2000,Asia,5064000
+Indonesia,2010,Asia,7003000
+Indonesia,2020,Asia,4053000
+Iraq,2000,Arab States,78000
+Iraq,2010,Arab States,1518000
+Ireland,1990,Europe,4818000
+Israel,2000,Europe,2672000
+Israel,2010,Europe,3444000
+Italy,1990,Europe,55706000
+Italy,2000,Europe,62702000
+Italy,2010,Europe,73225000
+Italy,2020,Europe,38419000
+Jamaica,2010,Latin America,2832000
+Japan,1990,Asia,3345000
+Japan,2000,Asia,4757000
+Japan,2010,Asia,8611000
+Japan,2020,Asia,4115799
+Jordan,2000,Arab States,2700000
+Jordan,2010,Arab States,8078000
+Jordan,2020,Arab States,1240000
+Kazakhstan,2000,Asia,1683000
+Kenya,1990,Africa,974000
+Kenya,2000,Africa,1037000
+Kenya,2010,Africa,1609000
+Kiribati,2010,Asia,8300
+Latvia,1990,Europe,1633000
+Latvia,2020,Europe,3204000
+Lebanon,1990,Arab States,450000
+Lithuania,1990,Europe,2600000
+Lithuania,2000,Europe,4092000
+Lithuania,2020,Europe,2284000
+Luxembourg,1990,Europe,768000
+Madagascar,1990,Africa,115000
+Malawi,2000,Africa,228000
+Malaysia,2000,Asia,10222000
+Malaysia,2010,Asia,24577000
+Malaysia,2020,Asia,4333000
+Mali,2000,Africa,86000
+Marshall Islands,2010,Asia,4599
+Mauritania,1990,Arab States,24000
+Mauritius,2000,Africa,678000
+Mexico,1990,Latin America,85446000
+Mexico,2000,Latin America,105673000
+Mexico,2010,Latin America,81953000
+Mongolia,2000,Asia,158000
+Mongolia,2010,Asia,557000
+Mongolia,2020,Asia,66900
+Morocco,1990,Arab States,2752000
+Morocco,2000,Arab States,4458000
+Morocco,2010,Arab States,9752000
+Myanmar,2010,Asia,792000
+Namibia,2000,Africa,759000
+Namibia,2010,Africa,1114000
+Nepal,1990,Asia,363000
+New Zealand,1990,Asia,1409000
+Nicaragua,2000,Latin America,581000
+Nicaragua,2010,Latin America,1071000
+Niger,1990,Africa,35000
+Niger,2010,Africa,74000
+Nigeria,1990,Africa,1031000
+Nigeria,2000,Africa,1492000
+Norway,2000,Europe,3104000
+Norway,2010,Europe,4767000
+Oman,2000,Arab States,1095000
+Oman,2010,Arab States,1500000
+Pakistan,1990,Asia,378000
+Palau,2010,Asia,85000
+Panama,1990,Latin America,417000
+Panama,2000,Latin America,600000
+Papua New Guinea,2000,Asia,120000
+Paraguay,1990,Latin America,15678000
+Peru,2000,Latin America,1650000
+Peru,2020,Latin America,1119000
+Philippines,1990,Asia,1760000
+Philippines,2010,Asia,3520000
+Poland,1990,Europe,82244000
+Poland,2000,Europe,84515000
+Poland,2010,Europe,58340000
+Portugal,1990,Europe,9511000
+Portugal,2000,Europe,12097000
+Portugal,2010,Europe,6756000
+Qatar,2010,Arab States,1700000
+Romania,1990,Europe,5445000
+Romania,2020,Europe,5023000
+Russian Federation,1990,Europe,10290000
+Russian Federation,2000,Europe,21169000
+Russian Federation,2010,Europe,22281000
+Russian Federation,2020,Europe,6359000
+San Marino,2000,Europe,3071000
+Saudi Arabia,2000,Arab States,11083000
+Saudi Arabia,2010,Arab States,13025000
+Senegal,2000,Africa,502000
+Senegal,2010,Africa,906000
+Serbia,2000,Europe,312000
+Singapore,2010,Asia,11642000
+Slovenia,2020,Europe,1216000
+Solomon Islands,1990,Asia,11800
+South Africa,1990,Africa,4684000
+South Africa,2000,Africa,6001000
+South Africa,2010,Africa,11303000
+South Africa,2020,Africa,3886600
+Spain,1990,Europe,52460000
+Spain,2000,Europe,74580000
+Spain,2010,Europe,93744000
+Spain,2020,Europe,36410000
+Sri Lanka,1990,Asia,414000
+Sri Lanka,2010,Asia,766000
+Sudan,2000,Arab States,38000
+Sudan,2010,Arab States,495000
+Suriname,2000,Latin America,72000
+Sweden,1990,Europe,2310000
+Sweden,2000,Europe,3828000
+Sweden,2010,Europe,5183000
+Switzerland,2000,Europe,7821000
+Syrian Arab Republic,2000,Arab States,3412000
+Syrian Arab Republic,2010,Arab States,10970000
+Tajikistan,2010,Asia,160000
+Thailand,1990,Asia,6952000
+Thailand,2000,Asia,9579000
+Tunisia,1990,Arab States,4120000
+Tunisia,2020,Arab States,2012000
+Turkmenistan,1990,Asia,233000
+Uganda,1990,Africa,160000
+Uganda,2000,Africa,193000
+Ukraine,1990,Europe,6127000
+Ukraine,2010,Europe,24114000
+Ukraine,2020,Europe,3382000
+United Arab Emirates,2010,Arab States,19313000
+United Kingdom,1990,Europe,23537000
+United Kingdom,2000,Europe,25209000
+United Kingdom,2010,Europe,30398000
+United Kingdom,2020,Europe,11101000
+United States,1990,Latin America,79732000
+United States,2010,Latin America,162275000
+United States,2020,Latin America,45037000
+Uruguay,1990,Latin America,2177000
+Uruguay,2010,Latin America,2708000
+Uzbekistan,1990,Asia,92000
+Uzbekistan,2000,Asia,302000
+Vanuatu,2000,Asia,106000
+Viet Nam,1990,Asia,1351000
+Viet Nam,2000,Asia,2140000
+Viet Nam,2010,Asia,5050000
+Zimbabwe,2000,Africa,1967000

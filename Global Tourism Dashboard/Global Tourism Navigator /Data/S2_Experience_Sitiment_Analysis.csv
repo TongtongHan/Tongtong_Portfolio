@@ -1,0 +1,9 @@
+Experience Type,Experience Category,Satisfaction Rate,Problems,Sentiment Impact,Advice
+Bad,Amenities,36%,5%,Low Impact,Save money here if needed
+Bad,Local Attractions,34%,3%,Moderate Impact,"Skip obvious tourist traps, seek authentic experiences"
+Bad,Nature Activities,36%,2%,High Impact,Invest in well-reviewed tours/activities - worth the extra cost
+Bad,Safety,27%,1%,Critical Impact,Research safe areas thoroughly - rare but trip-ruining when bad
+Good,Amenities,88%,10%,Low Impact,"Save money here, focus budget on experiences."
+Good,Local Attractions,92%,5%,High Impact,"Book early, read recent reviews, avoid tourist traps."
+Good,Nature Activities,94%,4%,High Impact,"Choose licensed operators, match your fitness level."
+Good,Safety,92%,6%,Critical Impact,"Research thoroughly, never compromise on secure locations."

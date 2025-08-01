@@ -1,0 +1,201 @@
+{
+  "name": "Total",
+  "value": 48854,
+  "Travel Purpose": [
+    {
+      "name": "Business",
+      "value": 3797,
+      "percentage": "7%",
+      "children": [
+        {
+          "name": "Airfares",
+          "value": 1559
+        },
+        {
+          "name": "Tours",
+          "value": 264
+        },
+        {
+          "name": "Transportation",
+          "value": 197
+        },
+        {
+          "name": "Accommodation",
+          "value": 1315
+        },
+        {
+          "name": "Shopping",
+          "value": 213
+        },
+        {
+          "name": "Entertainment",
+          "value": 28
+        },
+        {
+          "name": "Education",
+          "value": 0
+        },
+        {
+          "name": "Other Expenditure",
+          "value": 221
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "value": 12751,
+      "percentage": "26%",
+      "children": [
+        {
+          "name": "Airfares",
+          "value": 875
+        },
+        {
+          "name": "Tours",
+          "value": 85
+        },
+        {
+          "name": "Transportation",
+          "value": 381
+        },
+        {
+          "name": "Accommodation",
+          "value": 4399
+        },
+        {
+          "name": "Shopping",
+          "value": 639
+        },
+        {
+          "name": "Entertainment",
+          "value": 114
+        },
+        {
+          "name": "Education",
+          "value": 5756
+        },
+        {
+          "name": "Other Expenditure",
+          "value": 502
+        }
+      ]
+    },
+    {
+      "name": "Holiday",
+      "value": 17899,
+      "percentage": "37%",
+      "children": [
+        {
+          "name": "Airfares",
+          "value": 5128
+        },
+        {
+          "name": "Tours",
+          "value": 3023
+        },
+        {
+          "name": "Transportation",
+          "value": 1010
+        },
+        {
+          "name": "Accommodation",
+          "value": 6075
+        },
+        {
+          "name": "Shopping",
+          "value": 1503
+        },
+        {
+          "name": "Entertainment",
+          "value": 289
+        },
+        {
+          "name": "Education",
+          "value": 309
+        },
+        {
+          "name": "Other Expenditure",
+          "value": 562
+        }
+      ]
+    },
+    {
+      "name": "Other purpose",
+      "value": 4748,
+      "percentage": "10%",
+      "children": [
+        {
+          "name": "Airfares",
+          "value": 970
+        },
+        {
+          "name": "Tours",
+          "value": 87
+        },
+        {
+          "name": "Transportation",
+          "value": 282
+        },
+        {
+          "name": "Accommodation",
+          "value": 2402
+        },
+        {
+          "name": "Shopping",
+          "value": 300
+        },
+        {
+          "name": "Entertainment",
+          "value": 56
+        },
+        {
+          "name": "Education",
+          "value": 61
+        },
+        {
+          "name": "Other Expenditure",
+          "value": 590
+        }
+      ]
+    },
+    {
+      "name": "Visiting friends",
+      "value": 9659,
+      "percentage": "20%",
+      "children": [
+        {
+          "name": "Airfares",
+          "value": 4540
+        },
+        {
+          "name": "Tours",
+          "value": 234
+        },
+        {
+          "name": "Transportation",
+          "value": 440
+        },
+        {
+          "name": "Accommodation",
+          "value": 2569
+        },
+        {
+          "name": "Shopping",
+          "value": 1155
+        },
+        {
+          "name": "Entertainment",
+          "value": 118
+        },
+        {
+          "name": "Education",
+          "value": 335
+        },
+        {
+          "name": "Other Expenditure",
+          "value": 268
+        }
+      ]
+    }
+  ]
+}

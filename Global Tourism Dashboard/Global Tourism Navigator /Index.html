@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism & World Heritage Sites Visualization</title>
+    
+    <!-- D3 v7 Initialization -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v3.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    
+    <!-- Load CSS file, this CSS file handles all styles for the visualizations -->
+    <link rel="stylesheet" href="Index.css">
+</head>
+<body>
+    <main>
+        <!-- Landing to Introduction and description for the project -->
+        <section id="intro">
+            <div class="intro-content">
+                <h1>Global Tourism Navigator: Data-Driven Travel Intelligence</h1>
+                <p>Tourism data is everywhere. Tourism insights are rare. We bridge that gap. Our platform reveals the invisible forces shaping global travel: discover which destinations are rising before they explode, identify exactly what creates visitor satisfaction, and predict spending patterns before your competition even knows they exist. Stop guessing. Start knowing!</p>
+                <div class="scroll-prompt"></div>
+            </div>
+        </section>
+        
+        <!-- Global Tourism Hotspots: Where the World Travels -->
+        <section id="map-section">
+            <div class="visualization-container">
+                <div class="map-side">
+                    <h2 id="map-title">Section1: Global Tourism Hotspots: Where the World Travels</h2>
+                    <div class="map-controls">
+                        <div class="control-group">
+                            <span class="map-subtitle">Exploring the relationship between tourism volumes and heritage sites around the world</span>
+                        </div>
+                    </div>
+                    <div id="map-chart"></div>
+                    <div class="map-legend" id="map-legend"></div>
+                    <div class="map-description">
+                        <p>Three tourism superpowers dominate global travel: Europe (led by France), North America (led by the United States), and East Asia (led by China). These regions receive the highest international visitor volumes. The color intensity directly shows the darker the blue, the more visitors they attract. This pattern shows where tourism infrastructure, marketing, and natural/cultural attractions successfully convert into massive visitor numbers</p>
+                        <p>Data Source: UNESCO Heritage List: https://whc.unesco.org/en/list/ and World Brank International Tourism: https://data.worldbank.org/indicator/ST.INT.ARVL</p>
+                    </div>
+    
+                </div>
+                <div class="details-side" id="details-panel">
+                    <div class="details-header">
+                        <div class="country-indicator">
+                            <h3 id="country-name">Select a country</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="details-content">
+                        <div class="data-row">
+                            <div class="data-box">
+                                <div class="data-label">TOTAL TOURISM</div>
+                                <div class="data-value" id="tourism-volume">-</div>
+                                <div class="data-unit">visitors</div>
+                            </div>
+                            
+                            <div class="data-box">
+                                <div class="data-label">WORLD HERITAGE SITES</div>
+                                <div class="data-value" id="heritage-sites">-</div>
+                                <div class="data-unit">sites</div>
+                            </div>
+                        </div>
+                        
+                        <div id="pie-chart-container"></div>
+                        
+                        <div class="heritage-site-types">
+                            <h4>Heritage Site Types</h4>
+                            <div class="heritage-types-row">
+                                <div class="heritage-type-item">
+                                    <span class="heritage-type-label">Cultural</span>
+                                    <span class="heritage-type-value" id="cultural-percent" style="color: #1976d2;">-</span>
+                                </div>
+                                <div class="heritage-type-item">
+                                    <span class="heritage-type-label">Natural</span>
+                                    <span class="heritage-type-value" id="natural-percent" style="color: #43a047;">-</span>
+                                </div>
+                                <div class="heritage-type-item">
+                                    <span class="heritage-type-label">Mixed</span>
+                                    <span class="heritage-type-value" id="mixed-percent" style="color: #f9a825;">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="no-data-message" id="no-data-message">
+                        <p>No available data for this country</p>
+                    </div>
+                    
+                    <div class="map-instructions" id="map-instructions">
+                        <h3>Map Instructions</h3>
+                        
+                        <div class="instruction-item">
+                            <div class="instruction-text">
+                                <h4>Hover to Explore</h4>
+                                <p>Hover any country in the world map to see detailed tourism and heritage statistics.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="instruction-text">
+                                <h4>Tourism Volume Display</h4>
+                                <p>Countries with higher tourism volumes are shown in darker blue. The global distribution reveals tourism hotspots.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="instruction-item">
+                            <div class="instruction-text">
+                                <h4>Heritage Site Analysis</h4>
+                                <p>Each country's World Heritage Sites are broken down into Cultural, Natural, and Mixed categories shown in the pie chart.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tourism Race: Top Countries Battle for Visitors -->
+        <section id="bar-race-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Tourism Race: Top Countries Battle for Visitors</h2>
+                    <p class="section-description">Hit Play Animationand and watch the top 15 countries race for tourism dominance from 1990 to 2020</p>
+                </div>
+                
+                <div class="race-controls">
+                    <button id="play-button" class="race-button" style="cursor:pointer; position:relative; z-index:10;">
+                        Play Animation
+                    </button>
+                </div>
+                
+                <div id="bar-chart-race"></div>
+                
+                <div class="race-info">
+                    <p>This race displays how total cumulative tourism volume has grown for the top 15 countries over decades. France leads with 645M visitors by 2020, while China and the USA compete for second place. European countries dominate the rankings, proving that early tourism investment and strategic positioning create lasting competitive advantages in the global tourism market.
+                        <li>Data Source: World Brank International Tourism: https://data.worldbank.org/indicator/ST.INT.ARVL</li>
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- World Heritage Tourism Network -->
+        <section id="network-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>World Heritage Tourism Network</h2>
+                    <p class="section-description">Discover which countries maximize tourism from their heritage sites and which miss opportunities</p>
+                </div>
+                
+                <div class="network-controls" id="network-controls">
+
+                </div>
+                
+                <div id="network-chart"></div>
+                
+                <div class="network-info">
+                    <p>This interactive network shows the hidden relationship between heritage sites and tourism success. Node size shows tourism efficiency - how many visitors each heritage site attracts. Regional patterns emerge clearly: Europe dominates with highly efficient heritage tourism, while many countries in Africa and other regions have untapped potential despite rich cultural assets:</p>
+                    <ul>
+                        <li><strong>Node size</strong> represents tourists per heritage site - larger nodes have more tourists per heritage site</li>
+                        <li><strong>Node color</strong> indicates the geographic region of each country</li>
+                        <li><strong>Links</strong> connect countries within the same region, with thicker and darker lines showing countries that have very similar tourism efficiency ratios</li>
+                        <li>Data Source: UNESCO Heritage List: https://whc.unesco.org/en/list/ and World Brank International Tourism: https://data.worldbank.org/indicator/ST.INT.ARVL</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Circle Graph -->
+        <section id="circle-packing-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Section2: What Makes or Breaks a Trip: Visitor Experience Analysis</h2>
+                    <p class="section-description">Every destination wants happy visitors, but few know what actually creates satisfaction. We analyzed thousands of New Zealand traveler reviews to indicate the exact factors that turn good trips into unforgettable ones</p>
+                </div>
+                
+                <div id="circle-packing"></div>
+                
+                <div class="circle-packing-info">
+                    <p>This experience dashboard shows the most common feedback, grouped by experience category.Nature activities and safety create the best travel memories (94% and 92% satisfaction), while poor amenities and safety concerns ruin more trips than anything else. The data shows a clear pattern: travelers value authentic experiences and feeling secure above luxury amenities.</p>
+                    <ul>
+                        <li><strong>Green bar</strong> represent positive travel experiences</li>
+                        <li><strong>Red bar</strong> represent negative travel experiences</li>
+                        <li><strong>Circle size</strong> represents word frequency - larger circles indicate words mentioned more often by tourists</li>
+                        <li>Words are grouped into categories: Nature Activities, Local Attractions, Amenities, and Safety</li>
+                        <li><strong>Actionable Insights:</strong> For Travelers: Prioritize destinations with strong safety records and nature access. Budget less for fancy amenities, more for quality activities.
+                            For Destinations: Invest in safety infrastructure and nature experience quality: these drive satisfaction more than expensive facilities.
+                            Safety is make-or-break: 92% satisfaction when good, only 27% when bad: the biggest swing of any factor.</li>
+                        <li>Data Source: New Zealand Tourism Research:https://www.mbie.govt.nz/immigration-and-tourism/tourism-research-and-data/tourism-data-releases/international-visitor-survey-ivs/international-visitor-survey-data-download</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Tourism Spending by Purpose Graph -->
+        <section id="sunburst-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Section3: Tourism Spending by Purpose: Australia's $48.9B Market</h2>
+                    <p class="section-description">Breakdown of tourism expenditure by travel purpose and category in Australia, 2024 (AUD $M). Hover to see detailed spending</p>
+                </div>
+                
+                <div id="sunburst-chart"></div>
+                
+                <div class="sunburst-info">
+                    <p>Holiday travelers drive the biggest spending (37% of total), followed by education tourists(26%). Accommodation and food dominate expenses across all trip types, while shopping varies dramatically by travel purpose. This pattern shows Australia successfully attracts both vacation and education markets, creating more stable tourism revenue.</p>
+                    <ul>
+                        <li><strong>Inner circle</strong> represents the total expenditure</li>
+                        <li><strong>Middle ring</strong> breaks down spending by travel purpose (Holiday, Education, Business, etc.)</li>
+                        <li><strong>Outer ring</strong> shows detailed expenditure categories within each purpose (Airfares, Accommodation, Shopping, etc.)</li>
+                        <li>Hover over any segment to see detailed information about the expenditure information</li>
+                        <li>Data source: Austrilian Tourism Research: https://www.tra.gov.au/en/international/international-tourism-results#ref6</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Australia's Tourism Winners Radial Chart -->
+        <section id="radial-stacked-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2>Australia's Tourism Winners: Which Regions Are Growing?</h2>
+                    <p class="section-description">See which Australian regions attract the most visitors and where tourism is growing fastest. Hover over any region segment to see visitor numbers, growth rates, and destination category. Select between visitor trips and expenditure.</p>
+                </div>
+                
+                <div class="visualization-container">
+                    <div class="chart-side">
+                        <div id="radial-chart"></div>
+                    </div>
+                    
+                    <div class="details-side" id="region-details-panel">
+                        <div class="details-header">
+                            <div class="region-indicator">
+                                <h3 id="region-name">Select a region</h3>
+                            </div>
+                            <div class="data-type-controls">
+                                <button id="visitor-btn" class="data-btn active">Visitor Trips</button>
+                                <button id="expenditure-btn" class="data-btn">Expenditure</button>
+                            </div>
+                        </div>
+                        
+                        <div class="details-content">
+                            <div class="data-row">
+                                <div class="data-box">
+                                    <div class="data-label" id="data-type-label">VISITOR TRIPS</div>
+                                    <div class="data-value" id="data-value">-</div>
+                                    <div class="data-unit" id="data-unit">visitors (thousands)</div>
+                                </div>
+                                
+                                <div class="data-box">
+                                    <div class="data-label">GROWTH RATE</div>
+                                    <div class="data-value" id="growth-rate">-</div>
+                                    <div class="data-unit">from 2023 to 2024</div>
+                                </div>
+                            </div>
+                            
+                            <div class="category-section">
+                                <div class="category-title">City Category</div>
+                                <div class="category-value" id="city-category">-</div>
+                            </div>
+                        </div>
+                        
+                        <div class="no-data-message" id="no-region-message">
+                            <p>Hover over a region to see detailed information</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="radial-info">
+                    <p>Based on our Clustering algorism, we group Australian destinations into categories, with Sydney and Melbourne ranked as Major Cities, the top tourism tier. Sydney leads with 6.7 million visitors and 11% growth. These major cities attract far more tourists than regional areas, which show mixed performance. Cities with international airports and famous attractions consistently win the tourism race. </p>
+                    <ul>
+                        <li><strong>Inner segments</strong> 2023 visitor data</li>
+                        <li><strong>Outer segments</strong> 2024 visitor data</li>
+                        <li><strong>Segments</strong> represents different regions, sorted by total value. Regions sorted by total visitor volume</li>
+                        <li>Hover over segments to see detailed stats and growth rate for each region </li>
+                        <li>Data source: Austrilian Tourism Research: https://www.tra.gov.au/en/international/international-tourism-results#ref6</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Below are the js files to load the visualizations. Each js file is a visualization implementation. -->
+    <script src="World_Map.js"></script>
+    <script src="CountryRace.js"></script>
+    <script src="NetworkGraph.js"></script>
+    <script src="ExperienceCircle.js"></script>
+    <script src="SunburstChart.js"></script>
+    <script src="RadialChart.js"></script>
+</body>
+</html>
